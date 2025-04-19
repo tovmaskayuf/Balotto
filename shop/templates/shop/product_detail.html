@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="max-width: 800px; margin: auto; padding: 20px;">
+        <h1>{{ product.name }}</h1>
+
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
+
+        <p><strong>Category:</strong> {{ product.category|title }}</p>
+        <p><strong>Price:</strong> €{{ product.price }}</p>
+        <p><strong>Description:</strong><br>{{ product.description }}</p>
+
+        {% if product.in_stock %}
+            <p style="color: green;"><strong>Status:</strong> In Stock</p>
+            <form action="{% url 'cart_add' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" style="background-color: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+                    Add to Cart
+                </button>
+            </form>
+        {% else %}
+            <p style="color: red;"><strong>Status:</strong> Out of Stock</p>
+        {% endif %}
+
+        <div style="margin-top: 20px;">
+    <a href="{% url 'shop_home' %}" style="
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+    ">
+        ← Back to Store
+    </a>
+</div>
+    </div>
+{% endblock %}

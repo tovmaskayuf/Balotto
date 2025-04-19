@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>✅ Thank you, {{ name }}!</h2>
+<p>We’ve received your info. Please make sure the payment was sent to the MonoBank card.</p>
+<a href="{% url 'shop_home' %}" style="margin-top: 20px; display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">
+    ← Back to Store
+</a>
+{% endblock %}

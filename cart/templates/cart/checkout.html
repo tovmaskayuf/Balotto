@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 style="color: white; margin-bottom: 20px;">Pay for your order</h2>
+
+<p style="color: white;">Please send your payment to:</p>
+
+<!-- Блок з номером картки -->
+<div style="
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 30px;
+">
+    💳 This Card: <strong>4441 1144 3401 3791</strong>
+</div>
+
+<form method="post" style="max-width: 500px;">
+    {% csrf_token %}
+
+    <label style="color: white;">Your Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label style="color: white;">Your Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <!-- 🔁 Updated label + larger textarea -->
+    <label style="color: white;">Order notes (optional)</label><br>
+    <textarea name="message" rows="5" style="
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        resize: vertical;
+        font-size: 15px;
+        color: black;
+        background-color: white;
+    "></textarea><br><br>
+
+    <button type="submit" style="
+        background: #2ecc71;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    ">✅ I’ve paid</button>
+</form>
+{% endblock %}
