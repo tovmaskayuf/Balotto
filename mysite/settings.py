@@ -146,3 +146,21 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'danyyltest@gmail.com'
 EMAIL_HOST_PASSWORD = 'rbzu gzqt wsvh tfec'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+INSTALLED_APPS += [
+    'cloudinary',
+    'cloudinary_storage',
+]
+
+# Для media файлів:
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dkmapdnup',
+    'API_KEY': '153448492813744',
+    'API_SECRET': 'lIsnisqh16ykSnTQaJB9K0dUVuM',
+}
