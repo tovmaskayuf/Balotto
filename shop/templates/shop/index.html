@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <h1>Main Page</h1>
@@ -7,7 +8,7 @@
         {% for product in products %}
             <div class="product-card">
                 <a href="{% url 'product_detail' product.pk %}">
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img src="{% static 'shop/images/' %}{{ product.image }}" alt="{{ product.name }}">
                 </a>
                 <h3>
                     <a href="{% url 'product_detail' product.pk %}">

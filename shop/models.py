@@ -13,7 +13,7 @@ class Product(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    image = models.ImageField(upload_to='products/')
+    image = models.CharField(max_length=255)
     in_stock = models.BooleanField(default=True)
     created_at = models.DateField(auto_now_add=True)
 

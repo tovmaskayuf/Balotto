@@ -27,8 +27,9 @@ SECRET_KEY = 'django-insecure-+fxichi(e#clvl4jwmkb=w8s+m84^pb(dotqhlh_-mz$(e5!0f
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
 
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = ['balotto.onrender.com']
+# DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = True
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "balotto.onrender.com"]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
